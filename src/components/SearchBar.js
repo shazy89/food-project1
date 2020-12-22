@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         marginHorizontal: 15,
         flexDirection: 'row' ,
-        
+        marginBottom: 10
     }, 
     inputStyle: {
         flex: 1,
@@ -43,4 +43,5 @@ const styles = StyleSheet.create({
 })
 
 export default SearchBar
+        
       

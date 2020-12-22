@@ -12,8 +12,9 @@ const SearchScreen = () => {
              return result.price === price
          })
       }
+       // a lot of styling issues can be resolve by using flex; 1
     return (
-        <View> 
+        <> 
             <SearchBar term={term} 
                        onTermChange={setTerm} 
                        onTearmSubmit={searchApi}/>
@@ -21,9 +22,9 @@ const SearchScreen = () => {
               <ScrollView > 
                     <ResultsList results={filterResultsByPrice('$')} title='Cost Effective' />
                     <ResultsList results={filterResultsByPrice('$$')} title='Bit Price'/>
-                   <ResultsList results={filterResultsByPrice('$$$')} title='Big Spender'/>
+                    <ResultsList results={filterResultsByPrice('$$$')} title='Big Spender'/>
              </ScrollView>
-        </View>
+        </>
     );
    };
            // SrollView will allow scroll optin for this components
