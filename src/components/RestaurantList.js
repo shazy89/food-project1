@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import { Text, StyleSheet, View, Image, TextInput, ImageBackground } from "react-native";
 
 
-const RestaurantList = () => {
+const RestaurantList = ({title}) => {
 
 
    return (
        <View> 
-            <Text> RestaurantList</Text>
+            <Text> {title}</Text>
        </View>
    );
 };

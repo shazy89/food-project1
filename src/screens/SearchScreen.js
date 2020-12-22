@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from 'react';
-import { Text, StyleSheet, View, Image, TextInput, ImageBackground, Button  } from "react-native";
+import React, {useState} from 'react';
+import { Text, StyleSheet, View } from "react-native";
 import SearchBar from '../components/SearchBar';
-import yelp from '../api/yelp';
+import ResultsList from '../components/RestaurantList'
 import useResults from '../hooks/useResults';
 
 const SearchScreen = () => {
     const [term, setTerm] = useState('')
-
+    const [searchApi, results, errorMessage] = useResults();
+   
     return (
         <View> 
             <SearchBar term={term} 
@@ -14,7 +15,9 @@ const SearchScreen = () => {
                        onTearmSubmit={searchApi}/>
              { errorMessage ? <Text>{errorMessage}</Text> : null}
             <Text>LENGTH IS - {results.length}</Text>
-   
+             <ResultsList title='Cost Effective' />
+             <ResultsList title='Bit Price'/>
+             <ResultsList title='Big Spender'/>
         </View>
     );
    };
