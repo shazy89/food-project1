@@ -10,7 +10,7 @@ const navigator = createStackNavigator(
     Practice: PracticeScreen,
   },
   {
-    initialRouteName: 'Practice',
+    initialRouteName: 'Search',
     defaultNavigationOptions: {
       title: 'Business Search',
       headerStyle: {
