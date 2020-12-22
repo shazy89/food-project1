@@ -5,6 +5,7 @@ import ResultsList from '../components/ResultsList'
 import useResults from '../hooks/useResults';
 
 const SearchScreen = () => {
+
     const [term, setTerm] = useState('')
     const [searchApi, results, errorMessage] = useResults();
     const filterResultsByPrice = price => {
@@ -20,9 +21,12 @@ const SearchScreen = () => {
                        onTearmSubmit={searchApi}/>
              { errorMessage ? <Text>{errorMessage}</Text> : null}
               <ScrollView > 
-                    <ResultsList results={filterResultsByPrice('$')} title='Cost Effective' />
-                    <ResultsList results={filterResultsByPrice('$$')} title='Bit Price'/>
-                    <ResultsList results={filterResultsByPrice('$$$')} title='Big Spender'/>
+                    <ResultsList results={filterResultsByPrice('$')} 
+                       title='Cost Effective' />
+                    <ResultsList results={filterResultsByPrice('$$')} 
+                       title='Bit Price' />
+                    <ResultsList results={filterResultsByPrice('$$$')} 
+                       title='Big Spender' />
              </ScrollView>
         </>
     );

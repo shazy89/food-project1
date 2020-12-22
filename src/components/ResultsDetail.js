@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Text, StyleSheet, View, Image } from "react-native";
 
 
@@ -9,7 +9,7 @@ const ResultDetail = ({result}) => {
        <View style={styles.container}> 
              <Image style={styles.img} source={{uri: result.image_url}} />
              <Text style={styles.name}>{result.name}</Text>
-             <Text>{result.reting} Stars, {result.review_count} Reviews</Text>
+             <Text>{result.rating} Stars, {result.review_count} Reviews</Text>
        </View>
    );
 };
