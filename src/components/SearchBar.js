@@ -15,8 +15,8 @@ const SearchBar = ({term, onTermChange, onTearmSubmit}) => {
             onEndEditing={onTearmSubmit} 
             autoCapitalize="none"
             autoCorrect={false}
-
             />
+
        </View>
    );
 };
