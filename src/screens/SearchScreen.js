@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, ScrollView } from "react-native";
 import SearchBar from '../components/SearchBar';
 import ResultsList from '../components/ResultsList'
 import useResults from '../hooks/useResults';
@@ -18,14 +18,21 @@ const SearchScreen = () => {
                        onTermChange={setTerm} 
                        onTearmSubmit={searchApi}/>
              { errorMessage ? <Text>{errorMessage}</Text> : null}
-            <Text>LENGTH IS - {results.length}</Text>
-             <ResultsList results={filterResultsByPrice('$')} title='Cost Effective' />
-             <ResultsList results={filterResultsByPrice('$$')} title='Bit Price'/>
-             <ResultsList results={filterResultsByPrice('$$$')} title='Big Spender'/>
+              <ScrollView > 
+                    <ResultsList results={filterResultsByPrice('$')} title='Cost Effective' />
+                    <ResultsList results={filterResultsByPrice('$$')} title='Bit Price'/>
+                   <ResultsList results={filterResultsByPrice('$$$')} title='Big Spender'/>
+             </ScrollView>
         </View>
     );
    };
-            
+           // SrollView will allow scroll optin for this components
+         //  whatever we want to scroll will wrap with scroll view
+        //     <ScrollView > 
+        //                  <ResultsList results={filterResultsByPrice('$')} title='Cost Effective' />
+        //                 <ResultsList results={filterResultsByPrice('$$')} title='Bit Price'/>
+        //               <ResultsList results={filterResultsByPrice('$$$')} title='Big Spender'/>
+        //     </ScrollView  >
    const styles = StyleSheet.create({
    
    });

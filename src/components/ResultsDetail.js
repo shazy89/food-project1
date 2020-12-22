@@ -3,13 +3,13 @@ import { Text, StyleSheet, View, Image } from "react-native";
 
 
 const ResultDetail = ({result}) => {
-console.log(result)
+
 
    return (
-       <View> 
+       <View style={styles.container}> 
              <Image style={styles.img} source={{uri: result.image_url}} />
-            <Text>{result.name}</Text>
-            <Text>{result.reting} Stars, {result.review_count} Reviews</Text>
+             <Text style={styles.name}>{result.name}</Text>
+             <Text>{result.reting} Stars, {result.review_count} Reviews</Text>
        </View>
    );
 };
@@ -17,10 +17,15 @@ console.log(result)
       
 
 const styles = StyleSheet.create({
+    container: {
+        marginLeft: 15,
+    
+    },
     img: {
         width: 250,
         borderRadius: 4,
-        height: 120
+        height: 120,
+        marginBottom: 5
       },
       name: {
           fontWeight: 'bold',
